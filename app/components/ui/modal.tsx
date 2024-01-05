@@ -93,5 +93,6 @@ function ModalContents({
 Modal.DismissButton = ModalDismissButton
 Modal.OpenButton = ModalOpenButton
 Modal.Contents = ModalContents
+Modal.displayName = 'Modal'
 
 export { Modal }

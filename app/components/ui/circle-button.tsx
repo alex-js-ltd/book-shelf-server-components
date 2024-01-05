@@ -13,7 +13,6 @@ const circleButtonVariants = cva(
 				blue: 'hover:text-blue-400',
 				red: 'hover:text-red-400',
 				green: 'hover:text-green-400',
-
 				yellow: 'hover:text-yellow-400',
 			},
 			size: {
@@ -45,6 +44,7 @@ const CircleButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
 		)
 	},
 )
+
 CircleButton.displayName = 'Button'
 
 export { CircleButton, circleButtonVariants }
