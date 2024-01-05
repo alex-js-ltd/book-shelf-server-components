@@ -5,6 +5,7 @@ import { defaultSession, sessionOptions, sleep } from './auth'
 import { getIronSession, IronSession } from 'iron-session'
 import { cookies } from 'next/headers'
 import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
 
 export async function getSession(shouldSleep = true) {
 	const session = await getIronSession<SessionData>(cookies(), sessionOptions)
@@ -40,4 +41,5 @@ export async function login(formData: FormData) {
 	session.isLoggedIn = true
 	await session.save()
 	revalidatePath('/')
+	redirect('/home/discover')
 }

@@ -4,7 +4,7 @@ import { Modal } from './components/ui/modal'
 import { Button } from './components/ui/button'
 import { Input } from './components/ui/input'
 import { FormGroup } from './components/ui/form-group'
-import { login } from './utils/actions'
+import { login, getSession } from './utils/actions'
 
 export default function Home() {
 	return (
@@ -27,7 +27,10 @@ export default function Home() {
 						<Button variant="secondary">Register</Button>
 					</Modal.OpenButton>
 					<Modal.Contents title="Register">
-						<>div</>
+						<LoginForm
+							action={login}
+							submitButton={<Button variant="secondary">Register</Button>}
+						/>
 					</Modal.Contents>
 				</Modal>
 			</div>
@@ -48,11 +51,11 @@ function LoginForm({ action, submitButton }: LoginFormProps) {
 		>
 			<FormGroup>
 				<label htmlFor="email">Email</label>
-				<Input id="email" />
+				<Input id="email" name="email" />
 			</FormGroup>
 			<FormGroup>
 				<label htmlFor="password">Password</label>
-				<Input id="password" type="password" />
+				<Input id="password" type="password" name="password" />
 			</FormGroup>
 			<div>
 				{React.cloneElement(submitButton, {
