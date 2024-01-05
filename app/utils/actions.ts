@@ -29,7 +29,7 @@ export async function logout() {
 	// false => no db call for logout
 	const session = await getSession(false)
 	session.destroy()
-	revalidatePath('/app-router-server-component-and-action')
+	revalidatePath('/')
 }
 
 export async function login(formData: FormData) {
