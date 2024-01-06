@@ -1,3 +1,4 @@
+'use client'
 import { logout } from '@/app/utils/actions'
 import { SubmitButton } from '@/app/components/ui/submit-button'
 export default function DiscoverBooksScreen() {

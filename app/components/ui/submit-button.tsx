@@ -1,14 +1,18 @@
 'use client'
 
 import { useFormStatus } from 'react-dom'
+import { Button, type ButtonProps } from './button'
 
-export function SubmitButton({ value }: { value: string }) {
+export function SubmitButton(props: ButtonProps) {
 	const { pending } = useFormStatus()
 
+	const { value } = props
+
 	return (
-		<input
-			type="submit"
+		<Button
+			{...props}
 			value={pending ? 'Loading…' : value}
+			type="submit"
 			disabled={pending}
 		/>
 	)
